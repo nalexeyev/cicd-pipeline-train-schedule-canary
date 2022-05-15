@@ -12,11 +12,8 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
-            sh 'printenv'
-            when {
-                branch 'master'
-            }
             steps {
+                sh 'printenv'
                 script {
                     app = docker.build(DOCKER_IMAGE_NAME)
                     app.inside {
