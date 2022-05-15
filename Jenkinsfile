@@ -12,6 +12,7 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
+            sh 'printenv'
             when {
                 branch 'master'
             }
